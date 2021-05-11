@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "*": ["./*"],
+      "components/*": ["./components/*"],
+      "helpers/*": ["./helpers/*"],
+      "constants/*": ["./constants/*"],
+      "pages/*": ["./pages/*"]
+    }
+  },
+  "exclude": [
+    ".git",
+    ".app-cache",
+    ".npm",
+    ".npm-tmp",
+    "_next",
+    "_next*",
+    "node_modules",
+    "subfolder/_next",
+    "subfolder/node_modules",
+    "**/_next/*",
+    "**/node_modules/*"
+  ],
+  "compileOnSave": false
+}
