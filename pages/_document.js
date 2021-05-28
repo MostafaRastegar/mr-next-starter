@@ -9,6 +9,7 @@ export default class MyDocument extends Document {
 
     // Step 2: Retrieve styles from components in the page
     const page = renderPage((App) => (props) =>
+      // eslint-disable-next-line react/jsx-props-no-spreading
       sheet.collectStyles(<App {...props} />),
     );
 
@@ -21,7 +22,7 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <html>
+      <html lang="EN">
         <Head>
           <title>My page</title>
           {/* Step 5: Output the styles in the head  */}

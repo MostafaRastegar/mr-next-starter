@@ -6,7 +6,8 @@
       "components/*": ["./components/*"],
       "helpers/*": ["./helpers/*"],
       "constants/*": ["./constants/*"],
-      "pages/*": ["./pages/*"]
+      "pages/*": ["./pages/*"],
+      "store/*": ["./store/*"]
     }
   },
   "exclude": [

@@ -41,13 +41,6 @@
       }
     ],
 
-    "no-underscore-dangle": [
-      "error",
-      {
-        "allow": ["__typename"]
-      }
-    ],
-
     "prefer-destructuring": [
       "error",
       {
@@ -65,7 +58,9 @@
       }
     ],
     "jsx-a11y/anchor-is-valid": "off",
-
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "no-underscore-dangle": "off",
     "react/prefer-stateless-function": "off",
     "import/prefer-default-export": "off",
 
@@ -82,9 +77,8 @@
   },
   "settings": {
     "import/resolver": {
-      "alias": {
-        "map": [["~", "./source"]],
-        "extensions": [".ts", ".js", ".jsx", ".json"]
+      "node": {
+        "paths": ["./"]
       }
     }
   }

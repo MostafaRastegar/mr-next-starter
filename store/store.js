@@ -17,7 +17,7 @@ const loadingMD = loadingBarMiddleware({
 const persistConfig = {
   key: 'primary',
   storage,
-  whitelist: ['exampleData'], // place to select which state you want to persist
+  // whitelist: [], // place to select which state you want to persist
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
@@ -53,6 +53,8 @@ export const initializeStore = (preloadedState) => {
 };
 
 export function useStore(initialState) {
-  const store = useMemo(() => initializeStore(initialState), [initialState]);
-  return store;
+  const memoedStore = useMemo(() => initializeStore(initialState), [
+    initialState,
+  ]);
+  return memoedStore;
 }
