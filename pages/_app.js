@@ -1,4 +1,5 @@
 import { useStore } from 'store/store';
+// import { AppProps } from 'next/app';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import { persistStore } from 'redux-persist';

@@ -1,0 +1,52 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "noEmitOnError": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noImplicitAny": true,
+    "strictNullChecks": false,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": false,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noImplicitReturns": true,
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "strict": false,
+    "paths": {
+      "*": ["./*"],
+      "components/*": ["./components/*"],
+      "helpers/*": ["./helpers/*"],
+      "constants/*": ["./constants/*"],
+      "pages/*": ["./pages/*"],
+      "utils/*": ["./utils/*"],
+      "store/*": ["./store/*"],
+      "public/*": ["./public/*"],
+      "hooks/*": ["./hooks/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
+  "exclude": [
+    ".git",
+    ".app-cache",
+    ".npm",
+    ".npm-tmp",
+    "_next",
+    "_next*",
+    "node_modules",
+    "subfolder/_next",
+    "subfolder/node_modules",
+    "**/_next/*",
+    "**/node_modules/*"
+  ]
+}
