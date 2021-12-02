@@ -1,8 +1,7 @@
 import { createSelector } from 'reselect';
-/**
- * Main selectors, we did memoize this functions
- */
-const getUsers = (state) => state.users;
+import { RootStore } from 'store/interfaces';
+
+const getUsers = (state: RootStore) => state.users;
 
 export default {
   getAllUsersData: createSelector(getUsers, (users) => users.allUsers.data),

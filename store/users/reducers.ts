@@ -1,6 +1,11 @@
-import types from './types';
+// import { Action, ActionCreator, Dispatch } from 'redux';
+// import { ThunkAction } from 'redux-thunk';
+import { ActionInterface, InitialTemplateI } from 'store/interfaces';
 
-const initialState = {
+import types from './types';
+type DataI = { id: number; userName: string; password: string }[];
+
+const initialState: InitialTemplateI<DataI> = {
   allUsers: {
     loading: false,
     data: null,
@@ -8,7 +13,7 @@ const initialState = {
   },
 };
 
-const users = (state = initialState, action) => {
+const users = (state = initialState, action: ActionInterface<DataI>) => {
   switch (action.type) {
     // users requests
     case types.GET_ALL_USERS_REQUEST:

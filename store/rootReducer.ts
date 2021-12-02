@@ -1,9 +1,9 @@
 // Imports: Dependencies
 import { combineReducers } from 'redux';
 import { loadingBarReducer } from 'react-redux-loading-bar';
+import users from './users/reducers';
 
 // Imports: Reducers
-import users from './users/reducers';
 
 // Redux: Root Reducer
 const rootReducer = combineReducers({
