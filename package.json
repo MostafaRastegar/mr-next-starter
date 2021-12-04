@@ -11,6 +11,9 @@
     "fix-js": "npm run lint-js --fix"
   },
   "dependencies": {
+    "@types/react-redux": "^7.1.18",
+    "@types/redux": "^3.6.0",
+    "@types/redux-thunk": "^2.1.0",
     "axios": "^0.21.1",
     "next": "10.2.0",
     "next-redux-wrapper": "^6.0.2",
@@ -23,10 +26,7 @@
     "redux-persist": "^6.0.0",
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
-    "styled-components": "^5.2.1",
-    "@types/react-redux": "^7.1.18",
-    "@types/redux": "^3.6.0",
-    "@types/redux-thunk": "^2.1.0"
+    "styled-components": "^5.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.13.15",
@@ -35,30 +35,31 @@
     "@types/node": "^16.11.11",
     "@types/react": "^17.0.37",
     "@types/styled-components": "^5.1.11",
+    "babel-eslint": "^10.1.0",
     "babel-jest": "~25.2.6",
+    "babel-plugin-module-resolver": "^3.2.0",
     "babel-plugin-root-import": "^6.6.0",
     "eslint": "^7.24.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-node": "^4.1.0",
     "eslint-config-prettier": "^8.2.0",
     "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-import-resolver-typescript": "^2.4.0",
     "eslint-import-resolver-webpack": "^0.13.0",
+    "eslint-plugin-css-modules": "^2.11.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "eslint-plugin-css-modules": "^2.11.0",
-    "babel-plugin-module-resolver": "^3.2.0",
+    "husky": "^3.0.0",
     "jest": "~25.2.6",
+    "lint-staged": "^7.3.0",
     "prettier": "^2.2.1",
     "react-test-renderer": "~16.13.1",
     "redux-devtools-extension": "^2.13.9",
-    "typescript": "^4.5.2",
-    "eslint-import-resolver-typescript": "^2.4.0",
-    "lint-staged": "^7.3.0",
-    "husky": "^3.0.0"
+    "typescript": "^4.5.2"
   },
   "lint-staged": {
     "*.{js,jsx}": [

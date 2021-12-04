@@ -5,9 +5,9 @@ import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { loadingBarMiddleware } from 'react-redux-loading-bar';
 import thunk from 'redux-thunk';
-import rootReducer from './rootReducer';
+import rootReducer, { RootReducerI } from './rootReducer';
 
-let store;
+let store: any;
 
 // add redux loading bar middleware
 const loadingMD = loadingBarMiddleware({
@@ -22,7 +22,7 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-function makeStore(initialState = {}) {
+function makeStore(initialState: RootReducerI) {
   return createStore(
     persistedReducer,
     initialState,
@@ -30,7 +30,7 @@ function makeStore(initialState = {}) {
   );
 }
 
-export const initializeStore = (preloadedState) => {
+export const initializeStore = (preloadedState: RootReducerI) => {
   let _store = store ?? makeStore(preloadedState);
 
   // After navigating to a page with an initial Redux state, merge that state
@@ -52,7 +52,7 @@ export const initializeStore = (preloadedState) => {
   return _store;
 };
 
-export function useStore(initialState) {
+export function useStore(initialState: RootReducerI) {
   const memoedStore = useMemo(() => initializeStore(initialState), [
     initialState,
   ]);

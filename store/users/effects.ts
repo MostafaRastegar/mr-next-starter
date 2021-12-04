@@ -5,7 +5,7 @@ import { errObject } from 'helpers/reduxHelpers';
 import usersActions from './actions';
 import usersServices from './services';
 
-export default {
+const usersEffects = {
   getAllUsersRequest: () => async (
     dispatch: Dispatch<ActionInterface<AnyObjectI>>,
   ) => {
@@ -23,3 +23,5 @@ export default {
     return false;
   },
 };
+
+export default usersEffects;

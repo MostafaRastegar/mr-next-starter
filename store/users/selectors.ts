@@ -3,10 +3,12 @@ import { RootStore } from 'store/interfaces';
 
 const getUsers = (state: RootStore) => state.users;
 
-export default {
-  getAllUsersData: createSelector(getUsers, (users) => users.allUsers.data),
+const usersSelectors = {
+  getAllUsersData: createSelector(getUsers, (users) => users?.allUsers?.data),
   getAllUsersLoading: createSelector(
     getUsers,
-    (users) => users.allUsers.loading,
+    (users) => users?.allUsers?.loading,
   ),
 };
+
+export default usersSelectors;

@@ -13,7 +13,7 @@ const localStorageService = {
   getRefreshToken() {
     return this.refreshToken;
   },
-  setToken(token) {
+  setToken(token: string) {
     this.refreshToken = token;
     return token;
   },
@@ -39,7 +39,7 @@ instanceAxios.interceptors.request.use(
 
 instanceAxios.interceptors.response.use(
   (response) => response,
-  (error) => {
+  async (error) => {
     const originalRequest = error?.config;
     if (
       error?.response?.status === 401 &&
@@ -54,18 +54,15 @@ instanceAxios.interceptors.response.use(
       // eslint-disable-next-line no-underscore-dangle
       originalRequest._retry = true;
       const refreshToken = localStorageService.getRefreshToken();
-      return instanceAxios
-        .post('/auth/token', {
-          refresh_token: refreshToken,
-        })
-        .then((res) => {
-          if (res.status === 201) {
-            localStorageService.setToken(res.data);
-            instanceAxios.defaults.headers.common.Authorization = `Bearer ${localStorageService.getAccessToken()}`;
-            return axios(originalRequest);
-          }
-          return res;
-        });
+      const res = await instanceAxios.post('/auth/token', {
+        refresh_token: refreshToken,
+      });
+      if (res.status === 201) {
+        localStorageService.setToken(res.data);
+        instanceAxios.defaults.headers.common.Authorization = `Bearer ${localStorageService.getAccessToken()}`;
+        return axios(originalRequest);
+      }
+      return res;
     }
     return Promise.reject(error);
   },

@@ -1,3 +1,6 @@
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable no-undef */
+
 import { useStore } from 'store/store';
 // import { AppProps } from 'next/app';
 import PropTypes from 'prop-types';

@@ -1,4 +1,4 @@
-import styled from 'styled-components/native';
+import styled from 'styled-components';
 
 export const ContainerView = styled.div`
   flex: 1;
