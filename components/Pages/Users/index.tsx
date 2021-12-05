@@ -2,27 +2,32 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { usersEffects, usersSelectors } from 'store';
 import { StyledUsersWrapper, StyledUsersTitle } from './styles';
+import { RootStore } from 'store/interfaces';
 
 const Users = () => {
   const dispatch = useDispatch();
-  const allUsersData = useSelector((state) =>
-    usersSelectors.getAllUsersData(state),
+
+  const usersData = useSelector((state: RootStore) =>
+    usersSelectors.getUsersData(state),
   );
-  const allUsersLoading = useSelector((state) =>
-    usersSelectors.getAllUsersLoading(state),
+
+  const usersLoading = useSelector((state: RootStore) =>
+    usersSelectors.getUsersLoading(state),
   );
+
   useEffect(() => {
-    dispatch(usersEffects.getAllUsersRequest());
+    dispatch(usersEffects.getUsersRequest());
   }, []);
+
   return (
     <>
       <StyledUsersWrapper>
         <StyledUsersTitle>List Of Names</StyledUsersTitle>
-        {allUsersLoading ? (
+        {usersLoading ? (
           <span>Loading ....</span>
         ) : (
           <div>
-            {allUsersData?.map((item) => (
+            {usersData?.map((item: { id: number; userName: string }) => (
               <p key={item.id}>{item?.userName}</p>
             ))}
           </div>

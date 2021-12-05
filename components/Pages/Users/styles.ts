@@ -6,7 +6,7 @@ export const StyledUsersWrapper = styled.div`
   background-color: ${color('green', 'light')};
   padding: ${px(30)};
 `;
-export const StyledUsersTitle = styled.span`
+export const StyledUsersTitle = styled.h3`
   padding-bottom: ${px(30)};
   color: ${color('blue', 'dark')};
 `;

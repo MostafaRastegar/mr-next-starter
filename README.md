@@ -1,34 +1,148 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center"><img src="https://github.com/MostafaRastegar/mr-next-starter/raw/main/mr-next-starter.jpg" alt="BoxBouncing"/></p>
+<h1 align="center" style="color:#008ee5;">mr-next-starter</h1>
+<h3 align="center" style="color:#666666;">Start your project the easiest way</h3>
+<p align="center" style="font-weight: 900">
+    Highly flexible , High scalability ,Redux , Axios , Redux-thunk , Redux-persist, Styled-components , ESlint and Prettier
+</div>
 
-## Getting Started
+This project is based on the [Expo](https://reactnative.dev/docs/getting-started 'Expo'). Therefore, you can refer to its documentation to install **react-native** and **Expo**.
 
-First, run the development server:
+In this structure, we tried to bring you a good experience by combining different technologies.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## The main structure is as follows:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **`components`**
+  - **`Common`** _general components_
+  - **`Pages`** _partials and styles for every main pages_
+- **`pages`** _main pages_
+- **`helpers`** _utils and javascript helpers_
+- **`constants`**
+  - **`theme`** _config global colors and styles_
+  - **`endpoints`** _object of endpoints servieces_
+- **`store`** _redux repository for every main screen_
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## installation:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Assuming that you have [Node 12 LTS](https://nodejs.org/en/download/ 'Node 12 LTS') or greater installed, you can use npm to install the Expo CLI command line utility:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+_Install eslint, prettier and editor config plugins into your IDE_
 
-## Learn More
+1. `git clone https://github.com/MostafaRastegar/mr-next-starter.git`
 
-To learn more about Next.js, take a look at the following resources:
+2. `cd mr-next-starter`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. `npm install` or `yarn`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+4. `npm run dev` or `yarn dev`
 
-## Deploy on Vercel
+## document:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Store structures:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+You create a folder for each main part of the reducer, for example, the users' folder used in the Redux store.
+
+#### Users structures:
+
+- **store**
+  - **users**
+    - **actions**
+    - **effects**
+    - **reducers**
+    - **services**
+    - **types**
+
+#### Introducing types:
+
+Includes an object of all types used in Users actions. Here are three types of typing for each request:
+
+**REQUEST, SUCCESS, FAILURE**
+
+    const types = {
+    ...
+      GET_USERS_REQUEST: 'GET_USERS_REQUEST',
+      GET_USERS_SUCCESS: 'GET_USERS_SUCCESS',
+      GET_USERS_FAILURE: 'GET_USERS_FAILURE',
+    ...
+    };
+
+#### Introducing actions:
+
+Includes an object of all actions used in users side effects
+Here are three types of action for each request:
+**request, success, failure**
+
+Naming actions are based on what they want to do. For example, when requesting we use get, post, which affects the action name.
+To make it easier to use the actions in different parts of the project, the 'actionMaker' helper has been used, in which case each action determines which type it belongs to. And when calling it, you no longer need to pass the type.
+
+    const types = {
+    ...
+      getUsersRequest: actionMaker (types.GET_USERS_REQUEST),
+      getUsersSuccess: actionMaker (types.GET_USERS_SUCCESS),
+      getUsersFailure: actionMaker (types.GET_USERS_FAILURE),
+    ...
+    };
+
+#### Introduction of reducers:
+
+reducers determine the structure of each part of our store. We have here for each request three main parameters
+**loading, data, error**
+
+Consider that it responds to requests based on the response it receives from the server.
+
+#### Introducing selectors:
+
+selectors is an object that is responsible for getting data from the store. For example, if you need to read users' data at any time.
+You use the following function:
+`getUsersData`
+
+The naming of this function has three main parts.
+**get**: which always comes first in all the values ​​of this object.
+**name**: The name of the item mentioned in the store, for example, Users
+**Content-type**: which can be **'data', 'loading'**, and other items.
+
+You can read the [reselect](https://github.com/reduxjs/reselect 'reselect') documentation for more.
+
+#### Introduction of services:
+
+Services is an object that lists the requests that are to be made. And we get the **'get', 'post'** operation based on the endpoints we have using **Axios**.
+From now on to request. It is enough to call the function of that request from this section.
+
+#### Introducing effects:
+
+effects is an object in which the side-effects of a request are executed by the **async, await** operation, and it specifies what actions are called in order during the request. And what data to transfer to the store. For this part we used **redux-thunk**. If you want, you can use the **redux-saga** and ... with changes.
+
+> Remember that after completing the work, each section must be introduced in the 'index' file located in the store. So you can call them in the components.
+
+**for example:**
+
+    export {default as usersSelectors} from './users/selectors';
+    export {default as usersEffects} from './users/effects';
+    export {default as usersActions} from './users/actions';
+    export {default as usersServices} from './users/services';
+    export {default as usersTypes} from './users/types';
+
+## USAGE:
+
+#### How to dispatch action request and get data from the store in a component:
+
+Here we are on the track **~/components/Pages/Users/index.tsx**
+We created a component to display users that displays their list after requesting.
+First, we import **usersEffects** and **usersSelectors** objects from the store on the component.
+
+In the **didMount** component, we call a function related to the desired request.
+
+     useEffect (() => {
+        dispatch (usersEffects.getUsersRequest ());
+      }, []);
+
+All steps of extracting to store data in **the store** are handled by **effects**.
+
+_For read the new data from the store_, just call the corresponding **selector**.
+
+**for example:**
+
+      const UsersData = useSelector ((state) =>
+        usersSelectors.getUsersData (state),
+      );
+
+Finally, after loading is **'false'**, you can display the list of users.
