@@ -1,8 +1,6 @@
-import { ReactChildren } from 'react';
-import PropTypes from 'prop-types';
 import { ContainerView } from './styles';
 
-const MainLayout = ({ children }: { children: ReactChildren }) => (
+const MainLayout = ({ children }: { children: React.ReactChild }) => (
   <ContainerView>{children}</ContainerView>
 );
 

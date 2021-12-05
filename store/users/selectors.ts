@@ -4,11 +4,8 @@ import { RootStore } from 'store/interfaces';
 const getUsers = (state: RootStore) => state.users;
 
 const usersSelectors = {
-  getAllUsersData: createSelector(getUsers, (users) => users?.allUsers?.data),
-  getAllUsersLoading: createSelector(
-    getUsers,
-    (users) => users?.allUsers?.loading,
-  ),
+  getUsersData: createSelector(getUsers, (users) => users?.data),
+  getUsersLoading: createSelector(getUsers, (users) => users?.loading),
 };
 
 export default usersSelectors;

@@ -1,38 +1,25 @@
-// import { Action, ActionCreator, Dispatch } from 'redux';
-// import { ThunkAction } from 'redux-thunk';
-import { ActionInterface, InitialTemplateI } from 'store/interfaces';
-
+import { AnyAction } from 'redux';
+import { mergeStates } from 'helpers/reduxHelpers';
+import { InitialTemplateI } from 'store/interfaces';
 import usersTypes from './types';
-type DataI = { id: number; userName: string; password: string }[];
 
 export type UsersReducersType = InitialTemplateI<DataI>;
-
+type DataI = { id: number; userName: string; password: string }[];
 const initialState: UsersReducersType = {
-  allUsers: {
-    loading: false,
-    data: null,
-    error: false,
-  },
+  loading: false,
+  data: null,
+  error: false,
 };
 
-const users = (state = initialState, action: ActionInterface<DataI>) => {
+const users = (state = initialState, action: AnyAction) => {
+  const { request, success, failure } = mergeStates(state, action.payload);
   switch (action.type) {
-    // users requests
-    case usersTypes.GET_ALL_USERS_REQUEST:
-      return {
-        ...state,
-        allUsers: { loading: true, data: null, error: false },
-      };
-    case usersTypes.GET_ALL_USERS_SUCCESS:
-      return {
-        ...state,
-        allUsers: { loading: false, data: action.payload, error: false },
-      };
-    case usersTypes.GET_ALL_USERS_FAILURE:
-      return {
-        ...state,
-        allUsers: { loading: false, data: null, error: true },
-      };
+    case usersTypes.GET_USERS_REQUEST:
+      return request;
+    case usersTypes.GET_USERS_SUCCESS:
+      return success;
+    case usersTypes.GET_USERS_FAILURE:
+      return failure;
     default:
       return state;
   }

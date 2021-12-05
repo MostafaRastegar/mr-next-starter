@@ -1,12 +1,17 @@
 import rootReducer from 'store/rootReducer';
 import { Dispatch } from 'redux';
 
+// export interface InitialTemplateI<U> {
+//   [key: string]: {
+//     loading: boolean;
+//     data?: U;
+//     error: boolean;
+//   };
+// }
 export interface InitialTemplateI<U> {
-  [key: string]: {
-    loading: boolean;
-    data?: U;
-    error: boolean;
-  };
+  loading: boolean;
+  data?: U;
+  error: boolean;
 }
 
 export interface ActionInterface<T extends {}> {
@@ -28,6 +33,7 @@ export type ErrorInterface = {
   causes?: any[];
   code?: number;
 };
+
 export type ErrorDataInterface = {
   causes?: [null];
   code?: string;
@@ -58,7 +64,6 @@ export type ActionObjectType = {
   failure: string;
 };
 
-// eslint-disable-next-line no-undef
 export type RootStore = ReturnType<typeof rootReducer>;
 
 export type AnyObjectI = {

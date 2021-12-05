@@ -2,8 +2,8 @@ import { actionMaker } from 'helpers/reduxHelpers';
 import usersTypes from './types';
 
 const usersActions = {
-  getAllUsersRequest: actionMaker(usersTypes.GET_ALL_USERS_REQUEST),
-  getAllUsersSuccess: actionMaker(usersTypes.GET_ALL_USERS_SUCCESS),
-  getAllUsersFailure: actionMaker(usersTypes.GET_ALL_USERS_FAILURE),
+  getUsersRequest: actionMaker(usersTypes.GET_USERS_REQUEST),
+  getUsersSuccess: actionMaker(usersTypes.GET_USERS_SUCCESS),
+  getUsersFailure: actionMaker(usersTypes.GET_USERS_FAILURE),
 };
 export default usersActions;
