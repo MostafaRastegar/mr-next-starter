@@ -1,13 +1,15 @@
 import styled from 'styled-components';
 import Users from 'components/Pages/Users';
 
-export default () => (
+const Title = styled.h1`
+  color: red;
+`;
+
+const MainPage = () => (
   <div>
     <Title>My First Next.js Page</Title>
     <Users />
   </div>
 );
 
-const Title = styled.h1`
-  color: red;
-`;
+export default MainPage;
