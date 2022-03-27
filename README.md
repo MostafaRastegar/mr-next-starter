@@ -5,7 +5,7 @@
     Highly flexible , High scalability ,Redux , Axios , Redux-thunk , Redux-persist, Styled-components , ESlint and Prettier
 </div>
 
-This project is based on the [Expo](https://reactnative.dev/docs/getting-started 'Expo'). Therefore, you can refer to its documentation to install **react-native** and **Expo**.
+This project is based on the [Nextjs](https://nextjs.org/docs/getting-started 'Nextjs').
 
 In this structure, we tried to bring you a good experience by combining different technologies.
 
@@ -23,7 +23,7 @@ In this structure, we tried to bring you a good experience by combining differen
 
 ## installation:
 
-Assuming that you have [Node 12 LTS](https://nodejs.org/en/download/ 'Node 12 LTS') or greater installed, you can use npm to install the Expo CLI command line utility:
+Assuming that you have [Node 14 or 16 LTS](https://nodejs.org/en/download/ 'Node 14 Or 16 LTS') or greater installed, you can use npm to install the Expo CLI command line utility:
 
 _Install eslint, prettier and editor config plugins into your IDE_
 
