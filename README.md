@@ -1,11 +1,11 @@
-<p align="center"><img src="https://github.com/MostafaRastegar/mr-next-starter/raw/main/mr-next-starter.jpg" alt="BoxBouncing"/></p>
+<p align="center"><img src="https://camo.githubusercontent.com/92ec9eb7eeab7db4f5919e3205918918c42e6772562afb4112a2909c1aaaa875/68747470733a2f2f6173736574732e76657263656c2e636f6d2f696d6167652f75706c6f61642f76313630373535343338352f7265706f7369746f726965732f6e6578742d6a732f6e6578742d6c6f676f2e706e67" alt="BoxBouncing"/></p>
 <h1 align="center" style="color:#008ee5;">mr-next-starter</h1>
 <h3 align="center" style="color:#666666;">Start your project the easiest way</h3>
 <p align="center" style="font-weight: 900">
     Highly flexible , High scalability ,Redux , Axios , Redux-thunk , Redux-persist, Styled-components , ESlint and Prettier
 </div>
 
-This project is based on the [Expo](https://reactnative.dev/docs/getting-started 'Expo'). Therefore, you can refer to its documentation to install **react-native** and **Expo**.
+This project is based on the [Nextjs](https://nextjs.org/docs/getting-started 'Nextjs').
 
 In this structure, we tried to bring you a good experience by combining different technologies.
 
@@ -23,7 +23,7 @@ In this structure, we tried to bring you a good experience by combining differen
 
 ## installation:
 
-Assuming that you have [Node 12 LTS](https://nodejs.org/en/download/ 'Node 12 LTS') or greater installed, you can use npm to install the Expo CLI command line utility:
+Assuming that you have [Node 14 or 16 LTS](https://nodejs.org/en/download/ 'Node 14 Or 16 LTS') or greater installed, you can use npm to install the Expo CLI command line utility:
 
 _Install eslint, prettier and editor config plugins into your IDE_
 

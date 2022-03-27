@@ -13,13 +13,12 @@ export const ptToPx = (pt) => `${Math.round(pt * 0.95)}px`;
  * @description Will handle every thing about rem, just supply the value
  * @returns {function(*): string}
  */
-export const px = (...res) =>
-  [...res]
-    .map((size) =>
-      // eslint-disable-next-line no-nested-ternary
-      size ? (typeof size !== 'number' ? size : ptToPx(size)) : '0',
-    )
-    .join(' ');
+export const px = (...res) => [...res]
+  .map((size) => {
+    const checkTypeofSize = typeof size !== 'number' ? size : ptToPx(size);
+    return size ? checkTypeofSize : '0';
+  })
+  .join(' ');
 
 /**
  * @function
@@ -28,8 +27,7 @@ export const px = (...res) =>
  * @param hex
  * @returns {{red: number, green: number, blue: number, opacity: 1}}
  */
-export const jsRgba = (red, green, blue, opacity = 1) =>
-  `rgba(${red}, ${green}, ${blue}, ${opacity})`;
+export const jsRgba = (red, green, blue, opacity = 1) => `rgba(${red}, ${green}, ${blue}, ${opacity})`;
 
 /**
  * @function
@@ -84,8 +82,7 @@ export const makeRgba = (opacity, color) => {
  * @param shade
  * @returns {function(*): string}
  */
-export const color = (name, shade) => (props) =>
-  shade ? `${props.theme.colors[name][shade]}` : `${props.theme.colors[name]}`;
+export const color = (name, shade) => (props) => (shade ? `${props.theme.colors[name][shade]}` : `${props.theme.colors[name]}`);
 /**
  * @function
  * @name color
@@ -115,10 +112,9 @@ export const makeShadow = (
   spread,
   colory,
   inset = false,
-) =>
-  `${px(hOffset)} ${px(vOffset)} ${px(blur)} ${px(spread)} ${colory} ${
-    inset ? ' inset' : ''
-  }`;
+) => `${px(hOffset)} ${px(vOffset)} ${px(blur)} ${px(spread)} ${colory} ${
+  inset ? ' inset' : ''
+}`;
 
 /**
  * @function
@@ -128,5 +124,4 @@ export const makeShadow = (
  * @param threshold
  * @returns {function(*): string}
  */
-export const viewport = (size, threshold = 0) => (props) =>
-  `${props.theme.viewports[size] - threshold}px`;
+export const viewport = (size, threshold = 0) => (props) => `${props.theme.viewports[size] - threshold}px`;
