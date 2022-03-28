@@ -15,9 +15,9 @@ const Users = () => {
     usersSelectors.getUsersLoading(state),
   );
 
-  useEffect(() => {
-    dispatch(usersEffects.getUsersRequest());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(usersEffects.getUsersRequest());
+  // }, []);
 
   return (
     <>
