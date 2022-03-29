@@ -11,7 +11,6 @@ const usersEffects = {
     dispatch(usersActions.getUsersRequest());
     const response = await usersServices.getUsersService();
     const { data } = response;
-// console.log('data :>> ', data);
     if (data) {
       dispatch(usersActions.getUsersSuccess(data));
       dispatch(hideLoading());

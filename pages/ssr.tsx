@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { usersEffects, usersSelectors, usersActions } from 'store';
+import { usersEffects } from 'store';
 import { wrapper } from 'store/store';
 import Users from 'components/Pages/Users';
 
