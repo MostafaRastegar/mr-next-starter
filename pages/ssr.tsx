@@ -1,8 +1,11 @@
 import React from 'react';
+import type {
+  GetStaticPropsResult,
+} from 'next';
 import styled from 'styled-components';
 import { usersEffects } from 'store';
 import { wrapper } from 'store/store';
-import Users from 'components/Pages/Users';
+import Users from 'components/Pages/UsersSSR';
 
 const Title = styled.h1`
   color: red;
@@ -15,7 +18,8 @@ const MainPage = () => (
   </div>
 );
 
-export const getServerSideProps = wrapper.getServerSideProps((store) => async () => {
-  await store.dispatch(usersEffects.getUsersRequest());
+export const getServerSideProps = wrapper.getServerSideProps((store) => async (): Promise<GetStaticPropsResult<{}>> => {
+  await store.dispatch(usersEffects.getUsersRequest() as any);
+  return { props: {} };
 })
 export default MainPage;

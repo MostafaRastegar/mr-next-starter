@@ -1,12 +1,9 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { usersEffects, usersSelectors } from 'store';
+import { useSelector } from 'react-redux';
+import { usersSelectors } from 'store';
 import { StyledUsersWrapper, StyledUsersTitle } from './styles';
 import { RootStore } from 'store/interfaces';
 
 const Users = () => {
-  const dispatch = useDispatch();
-
   const usersData = useSelector((state: RootStore) =>
     usersSelectors.getUsersData(state),
   );
@@ -14,10 +11,6 @@ const Users = () => {
   const usersLoading = useSelector((state: RootStore) =>
     usersSelectors.getUsersLoading(state),
   );
-
-  useEffect(() => {
-    dispatch(usersEffects.getUsersRequest());
-  }, []);
 
   return (
     <>
