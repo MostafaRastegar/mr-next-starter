@@ -9,10 +9,8 @@ const usersEffects = {
   getUsersRequest: () => async (dispatch: Dispatch<AnyAction>) => {
     dispatch(showLoading());
     dispatch(usersActions.getUsersRequest());
-
     const response = await usersServices.getUsersService();
     const { data } = response;
-
     if (data) {
       dispatch(usersActions.getUsersSuccess(data));
       dispatch(hideLoading());
