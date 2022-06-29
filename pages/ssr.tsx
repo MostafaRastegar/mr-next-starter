@@ -1,9 +1,7 @@
 import React from 'react';
-import type {
-  GetStaticPropsResult,
-} from 'next';
+import type { GetStaticPropsResult } from 'next';
 import styled from 'styled-components';
-import { usersEffects } from 'store';
+import { usersEffects2 } from 'store';
 import { wrapper } from 'store/store';
 import Users from 'components/Pages/UsersSSR';
 
@@ -18,8 +16,10 @@ const MainPage = () => (
   </div>
 );
 
-export const getServerSideProps = wrapper.getServerSideProps((store) => async (): Promise<GetStaticPropsResult<{}>> => {
-  await store.dispatch(usersEffects.getUsersRequest() as any);
-  return { props: {} };
-})
+export const getServerSideProps = wrapper.getServerSideProps(
+  (store) => async (): Promise<GetStaticPropsResult<{}>> => {
+    await store.dispatch(usersEffects2.getUsersRequest2() as any);
+    return { props: {} };
+  },
+);
 export default MainPage;
