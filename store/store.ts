@@ -1,5 +1,5 @@
 import { createStore, AnyAction, Store, applyMiddleware } from 'redux';
-import { createWrapper, Context, HYDRATE } from 'next-redux-wrapper';
+import { createWrapper, HYDRATE } from 'next-redux-wrapper';
 import rootReducer, { RootReducerI } from './rootReducer';
 import { loadingBarMiddleware } from 'react-redux-loading-bar';
 import thunk from 'redux-thunk';

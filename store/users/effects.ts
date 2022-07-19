@@ -1,27 +1,28 @@
 import { Dispatch, AnyAction } from 'redux';
 import { showLoading, hideLoading } from 'react-redux-loading-bar';
 
-import { errObject } from 'helpers/reduxHelpers';
+import { effectsHandler } from 'helpers/reduxHelpers';
 import usersActions from './actions';
 import usersServices from './services';
 
 const usersEffects = {
   getUsersRequest: () => async (dispatch: Dispatch<AnyAction>) => {
-    dispatch(showLoading());
-    dispatch(usersActions.getUsersRequest());
-    const response = await usersServices.getUsersService();
-    const { data } = response;
-    if (data) {
-      dispatch(usersActions.getUsersSuccess(data));
-      dispatch(hideLoading());
-
-      return data;
-    }
-
-    dispatch(usersActions.getUsersFailure(errObject(response)));
-    dispatch(hideLoading());
-
-    return false;
+    // const requestHandler = effectsHandler(dispatch, [
+    //   usersActions.getUsersRequest,
+    //   usersActions.getUsersSuccess,
+    //   usersActions.getUsersFailure,
+    // ]);
+    // const responseHandler = await requestHandler(
+    //   usersServices.getUsersService,
+    //   [],
+    // );
+    // return responseHandler(200, null);
+    const requestHandler = effectsHandler(dispatch, [
+      usersActions.getUsersRequest,
+      usersActions.getUsersSuccess,
+      usersActions.getUsersFailure,
+    ]);
+    return (await requestHandler(usersServices.getUsersService, []))(200, null);
   },
 };
 
