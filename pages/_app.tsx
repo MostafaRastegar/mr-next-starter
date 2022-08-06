@@ -1,4 +1,4 @@
-import { wrapper } from 'store/store';
+import { wrapper } from 'store';
 import { AppProps } from 'next/app';
 // import { Provider } from 'react-redux';
 // import { persistStore } from 'redux-persist';
@@ -9,13 +9,11 @@ import defaultTheme from 'constants/theme';
 import GlobalStyle from 'constants/theme/GlobalStyle';
 
 const App = ({ Component, pageProps }: AppProps) => {
-
   return (
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyle />
       <Component {...pageProps} />
     </ThemeProvider>
-
   );
 };
 

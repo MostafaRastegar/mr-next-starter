@@ -1,18 +1,16 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { usersEffects, usersSelectors } from 'store';
 import { StyledUsersWrapper, StyledUsersTitle } from './styles';
-import { RootStore } from 'store/interfaces';
+import { usersEffects, RootReducerI, usersSelectors } from '@store';
 
 const Users = () => {
   const dispatch = useDispatch();
-
-  const usersData = useSelector((state: RootStore) =>
-    usersSelectors.getUsersData(state),
+  const usersData = useSelector((state: RootReducerI) =>
+    usersSelectors.getUsersSelectors.getUsersData(state),
   );
 
-  const usersLoading = useSelector((state: RootStore) =>
-    usersSelectors.getUsersLoading(state),
+  const usersLoading = useSelector((state: RootReducerI) =>
+    usersSelectors.getUsersSelectors.getUsersLoading(state),
   );
 
   useEffect(() => {
@@ -23,7 +21,7 @@ const Users = () => {
     <>
       <StyledUsersWrapper>
         <StyledUsersTitle>List Of Names</StyledUsersTitle>
-        {usersLoading ? (
+        {usersLoading === 'STATUS_LOADING' ? (
           <span>Loading ....</span>
         ) : (
           <div>

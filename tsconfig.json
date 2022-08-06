@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es2017",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
@@ -28,43 +24,22 @@
     "baseUrl": ".",
     "strict": false,
     "paths": {
-      "*": [
-        "./*"
-      ],
-      "components/*": [
-        "./components/*"
-      ],
-      "helpers/*": [
-        "./helpers/*"
-      ],
-      "constants/*": [
-        "./constants/*"
-      ],
-      "pages/*": [
-        "./pages/*"
-      ],
-      "utils/*": [
-        "./utils/*"
-      ],
-      "store/*": [
-        "./store/*"
-      ],
-      "public/*": [
-        "./public/*"
-      ],
-      "hooks/*": [
-        "./hooks/*"
-      ]
+      "*": ["./*"],
+      "components/*": ["./components/*"],
+      "helpers/*": ["./helpers/*"],
+      "constants/*": ["./constants/*"],
+      "pages/*": ["./pages/*"],
+      "utils/*": ["./utils/*"],
+      "store/*": ["./store/*"],
+      "public/*": ["./public/*"],
+      "hooks/*": ["./hooks/*"],
+      "@store": ["./node_modules/@fidibo/app-store"],
+      "@helpers": ["./node_modules/@fidibo/helpers"],
+      "@hooks": ["./node_modules/@fidibo/app-hooks"]
     },
     "incremental": true
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "**/*.js",
-    "**/*.jsx"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
   "exclude": [
     ".git",
     ".app-cache",
