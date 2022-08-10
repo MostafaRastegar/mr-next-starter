@@ -35,7 +35,7 @@
       "hooks/*": ["./hooks/*"],
       "@store": ["./node_modules/@fidibo/app-store"],
       "@helpers": ["./node_modules/@fidibo/helpers"],
-      "@hooks": ["./node_modules/@fidibo/app-hooks"]
+      "@hooks": ["./node_modules/@fidibo/hooks"]
     },
     "incremental": true
   },

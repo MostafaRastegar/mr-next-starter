@@ -11,6 +11,9 @@
     "lint-js": "eslint --fix --ignore-path .eslintignore --ignore-pattern \"!**/.*\" ."
   },
   "dependencies": {
+    "@fidibo/app-store": "git+https://newfidi:ok4DzezhjS5hPMyzcb-j@newgit.fidibo.com/fidiborearc/front/fidibo_appstore.git#develop",
+    "@fidibo/helpers": "git+https://newfidi:ok4DzezhjS5hPMyzcb-j@newgit.fidibo.com/fidiborearc/front/fidibo_helpers.git#develop",
+    "@fidibo/hooks": "git+https://newfidi:ok4DzezhjS5hPMyzcb-j@newgit.fidibo.com/fidiborearc/front/fidibo_hooks.git#develop",
     "@types/react-redux": "^7.1.18",
     "@types/redux": "^3.6.0",
     "@types/redux-thunk": "^2.1.0",
