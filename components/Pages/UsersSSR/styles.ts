@@ -1,12 +1,11 @@
 import styled from 'styled-components';
-import { color, px } from 'constants/theme/helpers';
 
 export const StyledUsersWrapper = styled.div`
   position: relative;
-  background-color: ${color('green', 'light')};
-  padding: ${px(30)};
+  background-color: green;
+  padding: 30px;
 `;
 export const StyledUsersTitle = styled.h3`
-  padding-bottom: ${px(30)};
-  color: ${color('blue', 'dark')};
+  padding-bottom: 30px;
+  color: blue;
 `;

@@ -1,22 +1,20 @@
-import { useSelector } from 'react-redux';
-import { usersSelectors } from 'store';
 import { StyledUsersWrapper, StyledUsersTitle } from './styles';
-import { RootStore } from 'store/interfaces';
+import { RootReducerI, usersSelectors } from '@store';
+import { useSelector } from 'react-redux';
 
 const Users = () => {
-  const usersData = useSelector((state: RootStore) =>
-    usersSelectors.getUsersData(state),
+  const usersData = useSelector((state: RootReducerI) =>
+    usersSelectors.getUsersSelectors.getUsersData(state),
   );
-
-  const usersLoading = useSelector((state: RootStore) =>
-    usersSelectors.getUsersLoading(state),
+  const usersLoading = useSelector((state: RootReducerI) =>
+    usersSelectors.getUsersSelectors.getUsersLoading(state),
   );
 
   return (
     <>
       <StyledUsersWrapper>
         <StyledUsersTitle>List Of Names</StyledUsersTitle>
-        {usersLoading ? (
+        {usersLoading === 'STATUS_LOADING' ? (
           <span>Loading ....</span>
         ) : (
           <div>

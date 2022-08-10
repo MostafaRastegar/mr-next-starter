@@ -1,10 +1,8 @@
 import React from 'react';
-import type {
-  GetStaticPropsResult,
-} from 'next';
+import type { GetStaticPropsResult } from 'next';
 import styled from 'styled-components';
-import { usersEffects } from 'store';
-import { wrapper } from 'store/store';
+import { usersEffects } from '@store';
+import { wrapper } from 'store';
 import Users from 'components/Pages/UsersSSR';
 
 const Title = styled.h1`
@@ -18,8 +16,10 @@ const MainPage = () => (
   </div>
 );
 
-export const getServerSideProps = wrapper.getServerSideProps((store) => async (): Promise<GetStaticPropsResult<{}>> => {
-  await store.dispatch(usersEffects.getUsersRequest() as any);
-  return { props: {} };
-})
+export const getServerSideProps = wrapper.getServerSideProps(
+  (store) => async (): Promise<GetStaticPropsResult<{}>> => {
+    await store.dispatch(usersEffects.getUsersRequest() as any);
+    return { props: {} };
+  },
+);
 export default MainPage;
