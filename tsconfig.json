@@ -22,6 +22,7 @@
     "noImplicitReturns": true,
     "jsx": "preserve",
     "baseUrl": ".",
+    "rootDir": ".",
     "strict": false,
     "paths": {
       "*": ["./*"],
@@ -32,10 +33,7 @@
       "utils/*": ["./utils/*"],
       "store/*": ["./store/*"],
       "public/*": ["./public/*"],
-      "hooks/*": ["./hooks/*"],
-      "@store": ["./node_modules/@fidibo/app-store"],
-      "@helpers": ["./node_modules/@fidibo/helpers"],
-      "@hooks": ["./node_modules/@fidibo/hooks"]
+      "hooks/*": ["./hooks/*"]
     },
     "incremental": true
   },

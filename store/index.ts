@@ -2,7 +2,7 @@ import { createStore, applyMiddleware, AnyAction } from 'redux';
 import { createWrapper, HYDRATE } from 'next-redux-wrapper';
 import { loadingBarMiddleware } from 'react-redux-loading-bar';
 import thunk from 'redux-thunk';
-import { rootReducer } from '@store';
+import { rootReducer } from '@fidibo/app-store';
 
 const bindMiddleware = (middleware: any[]) => {
   if (process.env.NODE_ENV !== 'production') {

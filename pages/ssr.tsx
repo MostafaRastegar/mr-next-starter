@@ -1,7 +1,7 @@
 import React from 'react';
 import type { GetStaticPropsResult } from 'next';
 import styled from 'styled-components';
-import { usersEffects } from '@store';
+import { usersEffects } from '@fidibo/app-store';
 import { wrapper } from 'store';
 import Users from 'components/Pages/UsersSSR';
 

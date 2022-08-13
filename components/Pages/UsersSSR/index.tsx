@@ -1,5 +1,5 @@
 import { StyledUsersWrapper, StyledUsersTitle } from './styles';
-import { RootReducerI, usersSelectors } from '@store';
+import { RootReducerI, usersSelectors } from '@fidibo/app-store';
 import { useSelector } from 'react-redux';
 
 const Users = () => {

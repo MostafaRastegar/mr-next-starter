@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { StyledUsersWrapper, StyledUsersTitle } from './styles';
-import { usersEffects, RootReducerI, usersSelectors } from '@store';
+import { usersEffects, RootReducerI, usersSelectors } from '@fidibo/app-store';
 
 const Users = () => {
   const dispatch = useDispatch();
