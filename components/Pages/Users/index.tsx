@@ -3,9 +3,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { usersEffects, usersSelectors } from 'store';
 import { StyledUsersWrapper, StyledUsersTitle } from './styles';
 import { RootStore } from 'store/interfaces';
+import { Dispatch } from 'redux';
 
 const Users = () => {
-  const dispatch = useDispatch();
+  const dispatch:Dispatch<any> = useDispatch();
 
   const usersData = useSelector((state: RootStore) =>
     usersSelectors.getUsersData(state),

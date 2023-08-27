@@ -1,6 +1,5 @@
 import { Dispatch, AnyAction } from 'redux';
 import { showLoading, hideLoading } from 'react-redux-loading-bar';
-
 import { errObject } from 'helpers/reduxHelpers';
 import usersActions from './actions';
 import usersServices from './services';
