@@ -1,7 +1,5 @@
 const usersTypes = {
-  GET_USERS_REQUEST: 'GET_USERS_REQUEST',
-  GET_USERS_SUCCESS: 'GET_USERS_SUCCESS',
-  GET_USERS_FAILURE: 'GET_USERS_FAILURE',
+  GET_USERS: 'GET_USERS',
 };
 
 export default usersTypes;
