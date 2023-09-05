@@ -1,6 +1,8 @@
 import { AnyObjectI } from '@/app/interfaces';
 import { UsersReducersType } from '@/app/users/reducers';
 import { AnyAction } from 'redux';
+const actionTypes = ['REQUEST', 'SUCCESS', 'FAILURE'];
+
 type ActionMaker = {
   type: string;
   payload?: Record<string, any>;
@@ -39,20 +41,19 @@ export const mergeStates = <T>(state: AnyObjectI, payload: T) => {
 export const reducerMaker = (state: UsersReducersType, action: AnyAction) => {
   const { request, success, failure } = mergeStates(state, action.payload);
   const type = action.type.split('_').pop();
-  if (type === 'REQUEST') {
+  if (type === actionTypes[0]) {
     return request;
   }
-  if (type === 'SUCCESS') {
+  if (type === actionTypes[1]) {
     return success;
   }
-  if (type === 'FAILURE') {
+  if (type === actionTypes[2]) {
     return failure;
   }
   return state;
 };
 
 export const makeActionTypesObject = (actionTypeName: string) => {
-  const actionTypes = ['REQUEST', 'SUCCESS', 'FAILURE'];
   const result: { [key: string]: string } = {};
 
   actionTypes.forEach((action) => {
@@ -63,7 +64,6 @@ export const makeActionTypesObject = (actionTypeName: string) => {
 };
 
 export const makeActionsObject = (typePrefix: string) => {
-  const actionTypes = ['REQUEST', 'SUCCESS', 'FAILURE'];
   const result: Record<string, (payload?: any) => ActionMaker> = {};
 
   actionTypes.forEach((action) => {
