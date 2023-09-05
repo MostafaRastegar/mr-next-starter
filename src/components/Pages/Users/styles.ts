@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, px } from 'constants/theme/helpers';
+import { color, px } from '@/constants/theme/helpers';
 
 export const StyledUsersWrapper = styled.div`
   position: relative;

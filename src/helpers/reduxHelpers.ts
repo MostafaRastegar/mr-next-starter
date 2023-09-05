@@ -1,9 +1,11 @@
-import { ActionObjectType, AnyObjectI } from 'store/interfaces';
+import { ActionObjectType, AnyObjectI } from '@/app/interfaces';
 
-export const actionMaker = (type: string) => (payload = {}) => ({
-  type,
-  payload,
-});
+export const actionMaker =
+  (type: string) =>
+  (payload = {}) => ({
+    type,
+    payload,
+  });
 
 export const makeActionsObject = (actionName: string): ActionObjectType => ({
   request: `${actionName}_REQUEST`,

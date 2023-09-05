@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { usersEffects, usersSelectors } from 'store';
+import { usersEffects, usersSelectors } from '@/app';
 import { StyledUsersWrapper, StyledUsersTitle } from './styles';
 import { Dispatch } from 'redux';
 

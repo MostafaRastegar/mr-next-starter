@@ -1,4 +1,4 @@
-import { actionMaker } from 'helpers/reduxHelpers';
+import { actionMaker } from '@/helpers/reduxHelpers';
 import usersTypes from './types';
 
 const usersActions = {

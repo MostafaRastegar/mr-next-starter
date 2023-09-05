@@ -1,4 +1,4 @@
-import rootReducer from 'store/rootReducer';
+import rootReducer from '@/app/rootReducer';
 import { Dispatch } from 'redux';
 
 // export interface InitialTemplateI<U> {

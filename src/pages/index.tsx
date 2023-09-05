@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Users from 'components/Pages/Users';
+import Users from '@/components//Pages/Users';
 
 const Title = styled.h1`
   color: red;

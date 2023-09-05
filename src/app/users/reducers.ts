@@ -1,6 +1,6 @@
 import { AnyAction } from 'redux';
-import { mergeStates } from 'helpers/reduxHelpers';
-import { InitialTemplateI } from 'store/interfaces';
+import { mergeStates } from '@/helpers/reduxHelpers';
+import { InitialTemplateI } from '@/app/interfaces';
 import usersTypes from './types';
 
 export type UsersReducersType = InitialTemplateI<DataI>;

@@ -28,42 +28,24 @@
     "baseUrl": ".",
     "strict": false,
     "paths": {
-      "*": [
-        "./*"
-      ],
-      "components/*": [
-        "./components/*"
-      ],
-      "helpers/*": [
-        "./helpers/*"
-      ],
-      "constants/*": [
-        "./constants/*"
-      ],
-      "pages/*": [
-        "./pages/*"
-      ],
-      "utils/*": [
-        "./utils/*"
-      ],
-      "store/*": [
-        "./store/*"
-      ],
-      "public/*": [
-        "./public/*"
-      ],
-      "hooks/*": [
-        "./hooks/*"
+      "@/*": [
+        "./src/*"
       ]
     },
-    "incremental": true
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "**/*.js",
-    "**/*.jsx"
+    "**/*.jsx",
+    ".next/types/**/*.ts"
   ],
   "exclude": [
     ".git",

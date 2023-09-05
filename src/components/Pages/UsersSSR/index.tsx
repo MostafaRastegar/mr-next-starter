@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
-import { usersSelectors } from 'store';
+import { usersSelectors } from '@/app';
 import { StyledUsersWrapper, StyledUsersTitle } from './styles';
-import { RootStore } from 'store/interfaces';
+import { RootStore } from '@/app/interfaces';
 
 const Users = () => {
   const usersData = useSelector((state: RootStore) =>

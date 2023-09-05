@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect';
-import { RootStore } from 'store/interfaces';
+import { RootStore } from '@/app/interfaces';
 
 const getUsers = (state: RootStore) => state.users;
 

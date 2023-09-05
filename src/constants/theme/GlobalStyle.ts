@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { color, px, styles } from 'constants/theme/helpers';
+import { color, px, styles } from '@/constants/theme/helpers';
 
 const GlobalStyle = createGlobalStyle`
   .global-shadow {
